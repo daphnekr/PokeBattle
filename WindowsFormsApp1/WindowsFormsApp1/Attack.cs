@@ -8,12 +8,12 @@ namespace WindowsFormsApp1
 {
     public class Attack
     {
-        public string Name;
-        public int Hitpoints
+        public string name;
+        public int hitpoints
         {
             get
             {
-                switch(Name)
+                switch(name)
                 {
                     case "Electric Ring":
                         return 50;
@@ -29,10 +29,13 @@ namespace WindowsFormsApp1
                 }
             }
         }
+        public Attack()
+        {
+        }
 
         public Attack(string name)
         {
-            Name = name;
+            this.name = name;
         }
 
 

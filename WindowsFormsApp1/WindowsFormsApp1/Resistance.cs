@@ -8,13 +8,13 @@ namespace WindowsFormsApp1
 {
     public class Resistance
     {
-        public EnergyType EnergyType;
-        public int Value;
+        public EnergyType energyType;
+        public int value;
 
         public Resistance(EnergyType energyType, int value)
         {
-            EnergyType = energyType;
-            Value = value;
+            this.energyType = energyType;
+            this.value = value;
         }
     }
 }

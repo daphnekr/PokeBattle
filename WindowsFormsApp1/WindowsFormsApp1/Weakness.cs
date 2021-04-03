@@ -8,13 +8,13 @@ namespace WindowsFormsApp1
 {
     public class Weakness
     {
-        public EnergyType EnergyType;
-        public double Multiplier;
+        public EnergyType energyType;
+        public double multiplier;
 
         public Weakness(EnergyType energyType, double multiplier)
         {
-            EnergyType = energyType;
-            Multiplier = multiplier;
+            this.energyType = energyType;
+            this.multiplier = multiplier;
         }
     }
 }

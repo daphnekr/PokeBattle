@@ -8,12 +8,12 @@ namespace WindowsFormsApp1
 {
     public class EnergyType
     {
-        public string Name;
-        public int Value
+        public string name;
+        public int value
         {
             get
             {
-                switch(Name)
+                switch(name)
                 {
                     case "Lightning":
                         return 60;
@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
 
         public EnergyType(string name)
         {
-            Name = name;
+            this.name = name;
         }
     }
 }
