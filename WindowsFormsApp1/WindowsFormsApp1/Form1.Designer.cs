@@ -39,6 +39,7 @@
             this.charmeleonAttack2Btn = new System.Windows.Forms.Button();
             this.getPopulationBtn = new System.Windows.Forms.Button();
             this.populationLbl = new System.Windows.Forms.Label();
+            this.warningLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pikachuBtn
@@ -142,11 +143,21 @@
             this.populationLbl.TabIndex = 11;
             this.populationLbl.Text = "Currently alive: ";
             // 
+            // warningLbl
+            // 
+            this.warningLbl.AutoSize = true;
+            this.warningLbl.Location = new System.Drawing.Point(337, 18);
+            this.warningLbl.Name = "warningLbl";
+            this.warningLbl.Size = new System.Drawing.Size(14, 17);
+            this.warningLbl.TabIndex = 12;
+            this.warningLbl.Text = "x";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.warningLbl);
             this.Controls.Add(this.populationLbl);
             this.Controls.Add(this.getPopulationBtn);
             this.Controls.Add(this.charmeleonAttack2Btn);
@@ -178,6 +189,7 @@
         private System.Windows.Forms.Button charmeleonAttack2Btn;
         private System.Windows.Forms.Button getPopulationBtn;
         private System.Windows.Forms.Label populationLbl;
+        private System.Windows.Forms.Label warningLbl;
     }
 }
 

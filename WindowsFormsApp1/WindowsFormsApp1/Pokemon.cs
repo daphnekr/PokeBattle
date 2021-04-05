@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
         public double Health
         {
             get { return health; }
-            set { health = maxHealth; }
+            set { health = value; }
         }
         public List<Attack> attack = new List<Attack>();
         public Weakness weakness;
@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
         {
             this.name = name;
             this.maxHealth = maxHealth;
+            Health = this.maxHealth;
             this.isAlive = isAlive;
         }
         public Pokemon()
@@ -33,22 +34,22 @@ namespace WindowsFormsApp1
         }
         public void Attack(Attack attack, Pokemon attackedPokemon)
         {
-            if (attackedPokemon.weakness.energyType.name == attack.name)
+            if (attackedPokemon.weakness.energyType.name == this.energyType.name)
             {
                 double damage = attack.hitpoints * attackedPokemon.weakness.multiplier;
-                attackedPokemon.health = attackedPokemon.health - damage;
+                attackedPokemon.Health = attackedPokemon.Health - damage;
             }
             else if(attackedPokemon.resistance.energyType.name == this.energyType.name)
             {
                 double damage = attack.hitpoints - attackedPokemon.resistance.value;
-                attackedPokemon.health = attackedPokemon.health - damage;
+                attackedPokemon.Health = attackedPokemon.Health - damage;
             }
             else
             {
-                attackedPokemon.health = attackedPokemon.health - attack.hitpoints;
+                attackedPokemon.Health = attackedPokemon.Health - attack.hitpoints;
             }
 
-            if(attackedPokemon.health <= 0)
+            if(attackedPokemon.Health <= 0)
             {
                 attackedPokemon.isAlive = false;
             }

@@ -54,12 +54,14 @@ namespace WindowsFormsApp1
                 attackingPokemon = pikachu;
                 pikachuAttack1Btn.Visible = true;
                 pikachuAttack2Btn.Visible = true;
+                
             }
             else
             {
                 pikachuBtn.BackColor = Color.Red;
                 attackedPokemon = pikachu;
             }
+            pikachuBtn.Enabled = false;
         }
 
         private void charmeleonBtn_Click(object sender, EventArgs e)
@@ -76,6 +78,7 @@ namespace WindowsFormsApp1
                 charmeleonBtn.BackColor = Color.Red;
                 attackedPokemon = charmeleon;
             }
+            charmeleonBtn.Enabled = false;
         }
 
         private void attackBtn_Click(object sender, EventArgs e)
@@ -100,6 +103,7 @@ namespace WindowsFormsApp1
             foreach (var button in this.Controls.OfType<Button>())
             {
                 button.BackColor = Color.Empty;
+                button.Enabled = true;
             }
         }
 
@@ -107,24 +111,28 @@ namespace WindowsFormsApp1
         {
             pikachuAttack1Btn.BackColor = Color.Green;
             attacking = pikachu.attack[0];
+            pikachuAttack1Btn.Enabled = false;
         }
 
         private void pikachuAttack2Btn_Click(object sender, EventArgs e)
         {
             pikachuAttack2Btn.BackColor = Color.Green;
             attacking = pikachu.attack[1];
+            pikachuAttack2Btn.Enabled = false;
         }
 
         private void charmeleonAttack1Btn_Click(object sender, EventArgs e)
         {
             charmeleonAttack1Btn.BackColor = Color.Green;
             attacking = charmeleon.attack[0];
+            charmeleonAttack1Btn.Enabled = false;
         }
 
         private void charmeleonAttack2Btn_Click(object sender, EventArgs e)
         {
             charmeleonAttack2Btn.BackColor = Color.Green;
             attacking = charmeleon.attack[1];
+            charmeleonAttack2Btn.Enabled = false;
         }
 
         private void getPopulationBtn_Click(object sender, EventArgs e)
