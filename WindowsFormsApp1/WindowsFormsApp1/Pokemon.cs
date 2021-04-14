@@ -8,57 +8,80 @@ namespace WindowsFormsApp1
 {
     public class Pokemon
     {
-        public string name;
-        public EnergyType energyType;
-        public double maxHealth;
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        private EnergyType.energyTypeName energyType;
+        public EnergyType.energyTypeName Energytype
+        {
+            get { return energyType; }
+            set { energyType = value; }
+        }
+        private double maxHealth;
         private double health;
         public double Health
         {
             get { return health; }
             set { health = value; }
         }
-        public List<Attack> attack = new List<Attack>();
-        public Weakness weakness;
-        public Resistance resistance;
-        public bool isAlive;
+        private List<Attack.attackName> attacks = new List<Attack.attackName>();
+        public List<Attack.attackName> Attacks
+        {
+            get { return attacks; }
+            set { attacks = value; }
+        }
+        private Weakness weakness;
+        public Weakness Weakness
+        {
+            get { return weakness; }
+            set { weakness = value; }
+        }
+        private Resistance resistance;
+        public Resistance Resistance
+        {
+            get { return resistance; }
+            set { resistance = value; }
+        }
+        private bool isAlive = true;
 
-        public Pokemon(string name, double maxHealth, bool isAlive)
+        public Pokemon(string name, double maxHealth)
         {
             this.name = name;
             this.maxHealth = maxHealth;
             Health = this.maxHealth;
-            this.isAlive = isAlive;
         }
         public Pokemon()
         {
         }
-        public void Attack(Attack attack, Pokemon attackedPokemon)
+        public void Attack(Attack.attackName attack, Pokemon attackingPokemon)
         {
-            if (attackedPokemon.weakness.energyType.name == this.energyType.name)
+            if (this.weakness.Energytype == attackingPokemon.energyType)
             {
-                double damage = attack.hitpoints * attackedPokemon.weakness.multiplier;
-                attackedPokemon.Health = attackedPokemon.Health - damage;
+                double damage = (int)attack * this.weakness.Multiplier;
+                this.Health = this.Health - damage;
             }
-            else if(attackedPokemon.resistance.energyType.name == this.energyType.name)
+            else if(this.resistance.Energytype == attackingPokemon.energyType)
             {
-                double damage = attack.hitpoints - attackedPokemon.resistance.value;
-                attackedPokemon.Health = attackedPokemon.Health - damage;
+                double damage = (int)attack - this.resistance.Value;
+                this.Health = this.Health - damage;
             }
             else
             {
-                attackedPokemon.Health = attackedPokemon.Health - attack.hitpoints;
+                this.Health = this.Health - (int)attack;
             }
 
-            if(attackedPokemon.Health <= 0)
+            if(this.Health <= 0)
             {
-                attackedPokemon.isAlive = false;
+                this.isAlive = false;
             }
         }
 
         public int getPopulation(List<Pokemon> pokemon)
         {
-            int currentlyAlive = pokemon.Where(x => x.isAlive == true).Count();
-            return currentlyAlive;
+            return pokemon.Where(x => x.isAlive == true).Count();
         }
     }
 }

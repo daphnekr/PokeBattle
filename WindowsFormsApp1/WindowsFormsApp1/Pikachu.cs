@@ -9,23 +9,16 @@ namespace WindowsFormsApp1
 
     public class Pikachu : Pokemon
     {
-        EnergyType lightningEnergyType = new EnergyType("Lightning");
-        EnergyType fireEnergyType = new EnergyType("Fire");
-        EnergyType fightingEnergyType = new EnergyType("Fighting");
-
-        Attack electricRingAttack = new Attack("Electric Ring");
-        Attack pikaPunchAttack = new Attack("Pika Punch");
-
-        public Pikachu() : base("Pikachu", 60, true)
+        public Pikachu() : base("Pikachu", 60)
         {
-            Weakness weakness = new Weakness(fireEnergyType, 1.5);
-            Resistance resistance = new Resistance(fightingEnergyType, 20);
+            Weakness weakness = new Weakness(EnergyType.energyTypeName.Fire, 1.5);
+            Resistance resistance = new Resistance(EnergyType.energyTypeName.Fighting, 20);
 
-            energyType = lightningEnergyType;
-            attack.Add(electricRingAttack);
-            attack.Add(pikaPunchAttack);
-            base.weakness = weakness;
-            base.resistance = resistance;
+            Energytype = EnergyType.energyTypeName.Lighting;
+            Attacks.Add(WindowsFormsApp1.Attack.attackName.ElectricRing);
+            Attacks.Add(WindowsFormsApp1.Attack.attackName.PikaPunch);
+            Weakness = weakness;
+            Resistance = resistance;
         }
 
     }

@@ -13,12 +13,9 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         // pokemons list
-        //List<Pokemon> pokemons = new List<Pokemon>();
-        //List<Attack> pikachuAttackList = new List<Attack>();
-        //List<Attack> charmeleonAttackList = new List<Attack>();
         Pokemon attackingPokemon = new Pokemon();
         Pokemon attackedPokemon = new Pokemon();
-        Attack attacking = new Attack();
+        Attack.attackName attacking;
 
         Pikachu pikachu = new Pikachu();
         Charmeleon charmeleon = new Charmeleon();
@@ -29,17 +26,17 @@ namespace WindowsFormsApp1
             attackingPokemon = null;
             attackedPokemon = null;
             
-            pikachuBtn.Text = pikachu.name;
+            pikachuBtn.Text = pikachu.Name;
             pikachuAttack1Btn.Visible = false;
             pikachuAttack2Btn.Visible = false;
-            pikachuAttack1Btn.Text = pikachu.attack[0].name;
-            pikachuAttack2Btn.Text = pikachu.attack[1].name;
+            pikachuAttack1Btn.Text = pikachu.Attacks[0].ToString();
+            pikachuAttack2Btn.Text = pikachu.Attacks[1].ToString();
 
-            charmeleonBtn.Text = charmeleon.name;
+            charmeleonBtn.Text = charmeleon.Name;
             charmeleonAttack1Btn.Visible = false;
             charmeleonAttack2Btn.Visible = false;
-            charmeleonAttack1Btn.Text = charmeleon.attack[0].name;
-            charmeleonAttack2Btn.Text = charmeleon.attack[1].name;
+            charmeleonAttack1Btn.Text = charmeleon.Attacks[0].ToString();
+            charmeleonAttack2Btn.Text = charmeleon.Attacks[1].ToString();
 
             pokemons.Add(pikachu);
             pokemons.Add(charmeleon);
@@ -83,11 +80,11 @@ namespace WindowsFormsApp1
 
         private void attackBtn_Click(object sender, EventArgs e)
         {
-            attackingPokemon.Attack(attacking, attackedPokemon);
-            pokemonName.Text = attackedPokemon.name + "'s health:";
+            attackedPokemon.Attack(attacking, attackingPokemon);
+            pokemonName.Text = attackedPokemon.Name + "'s health:";
             if(attackedPokemon.Health <= 0)
             {
-                pokemonHealthLbl.Text = attackedPokemon.name + " is dead!";
+                pokemonHealthLbl.Text = attackedPokemon.Name + " is dead!";
             }
             else
             {
@@ -110,36 +107,35 @@ namespace WindowsFormsApp1
         private void pikachuAttack1Btn_Click(object sender, EventArgs e)
         {
             pikachuAttack1Btn.BackColor = Color.Green;
-            attacking = pikachu.attack[0];
+            attacking = pikachu.Attacks[0];
             pikachuAttack1Btn.Enabled = false;
         }
 
         private void pikachuAttack2Btn_Click(object sender, EventArgs e)
         {
             pikachuAttack2Btn.BackColor = Color.Green;
-            attacking = pikachu.attack[1];
+            attacking = pikachu.Attacks[1];
             pikachuAttack2Btn.Enabled = false;
         }
 
         private void charmeleonAttack1Btn_Click(object sender, EventArgs e)
         {
             charmeleonAttack1Btn.BackColor = Color.Green;
-            attacking = charmeleon.attack[0];
+            attacking = charmeleon.Attacks[0];
             charmeleonAttack1Btn.Enabled = false;
         }
 
         private void charmeleonAttack2Btn_Click(object sender, EventArgs e)
         {
             charmeleonAttack2Btn.BackColor = Color.Green;
-            attacking = charmeleon.attack[1];
+            attacking = charmeleon.Attacks[1];
             charmeleonAttack2Btn.Enabled = false;
         }
 
         private void getPopulationBtn_Click(object sender, EventArgs e)
         {
             Pokemon pokemon = new Pokemon();
-            int pop = pokemon.getPopulation(pokemons);
-            populationLbl.Text = "Currently alive: " + pop;
+            populationLbl.Text = "Currently alive: " + pokemon.getPopulation(pokemons);
         }
     }
 }

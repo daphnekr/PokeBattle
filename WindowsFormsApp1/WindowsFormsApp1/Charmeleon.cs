@@ -8,24 +8,16 @@ namespace WindowsFormsApp1
 {
     public class Charmeleon : Pokemon
     {
-        EnergyType lightningEnergyType = new EnergyType("Lightning");
-        EnergyType fireEnergyType = new EnergyType("Fire");
-        EnergyType fightingEnergyType = new EnergyType("Fighting");
-        EnergyType waterEnergyType = new EnergyType("Water");
-
-        Attack headButtAttack = new Attack("Head Butt");
-        Attack flareAttack = new Attack("Flare");
-
-        public Charmeleon() : base("Charmeleon", 60, true)
+        public Charmeleon() : base("Charmeleon", 60)
         {
-            Weakness weakness = new Weakness(waterEnergyType, 2);
-            Resistance resistance = new Resistance(lightningEnergyType, 10);
+            Weakness weakness = new Weakness(EnergyType.energyTypeName.Water, 2);
+            Resistance resistance = new Resistance(EnergyType.energyTypeName.Lighting, 10);
 
-            energyType = fireEnergyType;
-            attack.Add(headButtAttack);
-            attack.Add(flareAttack);
-            base.weakness = weakness;
-            base.resistance = resistance;
+            Energytype = EnergyType.energyTypeName.Fire;
+            Attacks.Add(WindowsFormsApp1.Attack.attackName.HeadButt);
+            Attacks.Add(WindowsFormsApp1.Attack.attackName.Flare);
+            Weakness = weakness;
+            Resistance = resistance;
         }
 
     }

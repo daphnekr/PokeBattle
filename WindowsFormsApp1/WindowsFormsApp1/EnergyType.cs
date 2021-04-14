@@ -8,30 +8,12 @@ namespace WindowsFormsApp1
 {
     public class EnergyType
     {
-        public string name;
-        public int value
+        public enum energyTypeName
         {
-            get
-            {
-                switch(name)
-                {
-                    case "Lightning":
-                        return 60;
-                    case "Fire":
-                        return 50;
-                    case "Fighting":
-                        return 40;
-                    case "Water":
-                        return 30;
-                    default:
-                        return 0;
-                }
-            }
-        }
-
-        public EnergyType(string name)
-        {
-            this.name = name;
+            Lighting = 60,
+            Fire = 50,
+            Fighting = 40,
+            Water = 30
         }
     }
 }

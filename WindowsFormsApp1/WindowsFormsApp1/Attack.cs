@@ -8,36 +8,12 @@ namespace WindowsFormsApp1
 {
     public class Attack
     {
-        public string name;
-        public int hitpoints
+        public enum attackName
         {
-            get
-            {
-                switch(name)
-                {
-                    case "Electric Ring":
-                        return 50;
-                    case "Pika Punch":
-                        return 20;
-                    case "Head Butt":
-                        return 10;
-                    case "Flare":
-                        return 30;
-                    default:
-                        return 0;
-
-                }
-            }
+            ElectricRing = 50,
+            PikaPunch = 20,
+            HeadButt = 10,
+            Flare = 30
         }
-        public Attack()
-        {
-        }
-
-        public Attack(string name)
-        {
-            this.name = name;
-        }
-
-
     }
 }

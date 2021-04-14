@@ -39,23 +39,22 @@
             this.charmeleonAttack2Btn = new System.Windows.Forms.Button();
             this.getPopulationBtn = new System.Windows.Forms.Button();
             this.populationLbl = new System.Windows.Forms.Label();
-            this.warningLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pikachuBtn
             // 
             this.pikachuBtn.Location = new System.Drawing.Point(108, 81);
             this.pikachuBtn.Name = "pikachuBtn";
-            this.pikachuBtn.Size = new System.Drawing.Size(75, 23);
+            this.pikachuBtn.Size = new System.Drawing.Size(86, 30);
             this.pikachuBtn.TabIndex = 0;
             this.pikachuBtn.UseVisualStyleBackColor = true;
             this.pikachuBtn.Click += new System.EventHandler(this.pikachuBtn_Click);
             // 
             // charmeleonBtn
             // 
-            this.charmeleonBtn.Location = new System.Drawing.Point(505, 81);
+            this.charmeleonBtn.Location = new System.Drawing.Point(491, 81);
             this.charmeleonBtn.Name = "charmeleonBtn";
-            this.charmeleonBtn.Size = new System.Drawing.Size(75, 23);
+            this.charmeleonBtn.Size = new System.Drawing.Size(113, 30);
             this.charmeleonBtn.TabIndex = 2;
             this.charmeleonBtn.UseVisualStyleBackColor = true;
             this.charmeleonBtn.Click += new System.EventHandler(this.charmeleonBtn_Click);
@@ -64,7 +63,7 @@
             // 
             this.attackBtn.Location = new System.Drawing.Point(324, 270);
             this.attackBtn.Name = "attackBtn";
-            this.attackBtn.Size = new System.Drawing.Size(75, 23);
+            this.attackBtn.Size = new System.Drawing.Size(82, 33);
             this.attackBtn.TabIndex = 3;
             this.attackBtn.Text = "Attack!";
             this.attackBtn.UseVisualStyleBackColor = true;
@@ -92,7 +91,7 @@
             // 
             this.pikachuAttack1Btn.Location = new System.Drawing.Point(12, 117);
             this.pikachuAttack1Btn.Name = "pikachuAttack1Btn";
-            this.pikachuAttack1Btn.Size = new System.Drawing.Size(106, 23);
+            this.pikachuAttack1Btn.Size = new System.Drawing.Size(112, 37);
             this.pikachuAttack1Btn.TabIndex = 6;
             this.pikachuAttack1Btn.UseVisualStyleBackColor = true;
             this.pikachuAttack1Btn.Click += new System.EventHandler(this.pikachuAttack1Btn_Click);
@@ -101,7 +100,7 @@
             // 
             this.pikachuAttack2Btn.Location = new System.Drawing.Point(187, 117);
             this.pikachuAttack2Btn.Name = "pikachuAttack2Btn";
-            this.pikachuAttack2Btn.Size = new System.Drawing.Size(75, 23);
+            this.pikachuAttack2Btn.Size = new System.Drawing.Size(92, 37);
             this.pikachuAttack2Btn.TabIndex = 7;
             this.pikachuAttack2Btn.UseVisualStyleBackColor = true;
             this.pikachuAttack2Btn.Click += new System.EventHandler(this.pikachuAttack2Btn_Click);
@@ -110,7 +109,7 @@
             // 
             this.charmeleonAttack1Btn.Location = new System.Drawing.Point(420, 117);
             this.charmeleonAttack1Btn.Name = "charmeleonAttack1Btn";
-            this.charmeleonAttack1Btn.Size = new System.Drawing.Size(75, 23);
+            this.charmeleonAttack1Btn.Size = new System.Drawing.Size(87, 37);
             this.charmeleonAttack1Btn.TabIndex = 8;
             this.charmeleonAttack1Btn.UseVisualStyleBackColor = true;
             this.charmeleonAttack1Btn.Click += new System.EventHandler(this.charmeleonAttack1Btn_Click);
@@ -119,7 +118,7 @@
             // 
             this.charmeleonAttack2Btn.Location = new System.Drawing.Point(584, 117);
             this.charmeleonAttack2Btn.Name = "charmeleonAttack2Btn";
-            this.charmeleonAttack2Btn.Size = new System.Drawing.Size(75, 23);
+            this.charmeleonAttack2Btn.Size = new System.Drawing.Size(89, 37);
             this.charmeleonAttack2Btn.TabIndex = 9;
             this.charmeleonAttack2Btn.UseVisualStyleBackColor = true;
             this.charmeleonAttack2Btn.Click += new System.EventHandler(this.charmeleonAttack2Btn_Click);
@@ -128,7 +127,7 @@
             // 
             this.getPopulationBtn.Location = new System.Drawing.Point(597, 286);
             this.getPopulationBtn.Name = "getPopulationBtn";
-            this.getPopulationBtn.Size = new System.Drawing.Size(132, 23);
+            this.getPopulationBtn.Size = new System.Drawing.Size(135, 35);
             this.getPopulationBtn.TabIndex = 10;
             this.getPopulationBtn.Text = "Get population";
             this.getPopulationBtn.UseVisualStyleBackColor = true;
@@ -143,21 +142,11 @@
             this.populationLbl.TabIndex = 11;
             this.populationLbl.Text = "Currently alive: ";
             // 
-            // warningLbl
-            // 
-            this.warningLbl.AutoSize = true;
-            this.warningLbl.Location = new System.Drawing.Point(337, 18);
-            this.warningLbl.Name = "warningLbl";
-            this.warningLbl.Size = new System.Drawing.Size(14, 17);
-            this.warningLbl.TabIndex = 12;
-            this.warningLbl.Text = "x";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.warningLbl);
             this.Controls.Add(this.populationLbl);
             this.Controls.Add(this.getPopulationBtn);
             this.Controls.Add(this.charmeleonAttack2Btn);
@@ -189,7 +178,6 @@
         private System.Windows.Forms.Button charmeleonAttack2Btn;
         private System.Windows.Forms.Button getPopulationBtn;
         private System.Windows.Forms.Label populationLbl;
-        private System.Windows.Forms.Label warningLbl;
     }
 }
 
