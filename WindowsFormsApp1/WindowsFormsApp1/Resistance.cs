@@ -14,11 +14,11 @@ namespace WindowsFormsApp1
             get { return energyType; }
             set { energyType = value; }
         }
-        private int value;
+        private int value1;
         public int Value
         {
-            get { return value; }
-            set { value = value; }
+            get { return value1; }
+            set { value1 = value; }
         }
 
         public Resistance(EnergyType.energyTypeName energyType, int value)
