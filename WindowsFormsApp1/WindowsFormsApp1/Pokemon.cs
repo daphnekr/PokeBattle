@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
     public class Pokemon
     {
         private string name;
-        public string Name
+        public string Name 
         {
             get { return name; }
             set { name = value; }
@@ -56,26 +56,30 @@ namespace WindowsFormsApp1
         public Pokemon()
         {
         }
-        public void Attack(Attack.attackName attack, Pokemon attackingPokemon)
+        public void Attack(Attack.attackName attack, EnergyType.energyTypeName energyTypeAttackingPok)
         {
-            if (this.weakness.Energytype == attackingPokemon.energyType)
+            Damage(attack, energyTypeAttackingPok);
+        }
+        public void Damage(Attack.attackName attack, EnergyType.energyTypeName energyTypeAttackingPok)
+        {
+            if (weakness.Energytype == energyTypeAttackingPok)
             {
-                double damage = (int)attack * this.weakness.Multiplier;
-                this.Health = this.Health - damage;
+                double damage = (int)attack * weakness.Multiplier;
+                Health = Health - damage;
             }
-            else if(this.resistance.Energytype == attackingPokemon.energyType)
+            else if (resistance.Energytype == energyTypeAttackingPok)
             {
-                double damage = (int)attack - this.resistance.Value;
-                this.Health = this.Health - damage;
+                double damage = (int)attack - resistance.Value1;
+                Health = Health - damage;
             }
             else
             {
-                this.Health = this.Health - (int)attack;
+                Health = Health - (int)attack;
             }
 
-            if(this.Health <= 0)
+            if (Health <= 0)
             {
-                this.isAlive = false;
+                isAlive = false;
             }
         }
 

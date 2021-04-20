@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
             set { energyType = value; }
         }
         private int value1;
-        public int Value
+        public int Value1
         {
             get { return value1; }
             set { value1 = value; }
@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         public Resistance(EnergyType.energyTypeName energyType, int value)
         {
             this.Energytype = energyType;
-            this.Value = value;
+            this.Value1 = value;
         }
     }
 }

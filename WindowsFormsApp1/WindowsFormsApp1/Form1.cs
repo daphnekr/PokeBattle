@@ -80,7 +80,7 @@ namespace WindowsFormsApp1
 
         private void attackBtn_Click(object sender, EventArgs e)
         {
-            attackedPokemon.Attack(attacking, attackingPokemon);
+            attackedPokemon.Attack(attacking, attackingPokemon.Energytype);
             pokemonName.Text = attackedPokemon.Name + "'s health:";
             if(attackedPokemon.Health <= 0)
             {
